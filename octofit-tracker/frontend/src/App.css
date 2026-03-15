@@ -1,0 +1,122 @@
+/* ── OctoFit Tracker – global design system ── */
+
+:root {
+  --of-primary:  #0d6efd;
+  --of-dark:     #1a1d23;
+  --of-surface:  #f4f6f9;
+  --of-radius:   0.5rem;
+  --of-shadow:   0 2px 8px rgba(0,0,0,.10);
+}
+
+body {
+  background-color: var(--of-surface);
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+/* ── Navbar ── */
+.octofit-navbar {
+  background-color: var(--of-dark) !important;
+  box-shadow: 0 2px 6px rgba(0,0,0,.35);
+}
+.octofit-navbar .navbar-brand {
+  font-weight: 700;
+  font-size: 1.3rem;
+  letter-spacing: .03em;
+  color: #fff !important;
+}
+.octofit-navbar .nav-link {
+  font-weight: 500;
+  color: rgba(255,255,255,.75) !important;
+  transition: color .15s;
+  padding-bottom: .3rem;
+}
+.octofit-navbar .nav-link:hover { color: #fff !important; }
+.octofit-navbar .nav-link.active {
+  color: #fff !important;
+  border-bottom: 2px solid var(--of-primary);
+}
+
+/* ── Page content wrapper ── */
+.page-content {
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+}
+
+/* ── Hero card ── */
+.hero-card {
+  border: none;
+  border-radius: var(--of-radius);
+  box-shadow: var(--of-shadow);
+  overflow: hidden;
+}
+.hero-card .hero-header {
+  background: linear-gradient(135deg, #1a1d23 0%, #0d6efd 100%);
+  color: #fff;
+  padding: 3rem 2rem;
+}
+.hero-card .hero-header h1 { font-size: 2.4rem; font-weight: 700; }
+.hero-card .feature-icon   { font-size: 2rem; margin-bottom: .4rem; }
+
+/* ── Data cards (every component) ── */
+.data-card {
+  border: none;
+  border-radius: var(--of-radius);
+  box-shadow: var(--of-shadow);
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+.data-card .card-header {
+  background-color: var(--of-primary);
+  color: #fff;
+  padding: .85rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.data-card .card-header h4 {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+.data-card .card-footer {
+  background-color: #f8f9fa;
+  font-size: .82rem;
+  color: #6c757d;
+  padding: .5rem 1.25rem;
+}
+
+/* ── Tables ── */
+.data-card .table { margin-bottom: 0; }
+.data-card .table thead th {
+  background-color: #343a40;
+  color: #fff;
+  border-color: #454d55;
+  font-weight: 600;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+.data-card .table tbody tr:hover { background-color: rgba(13,110,253,.06); }
+.data-card .table td { vertical-align: middle; }
+
+/* ── Loading spinner overlay ── */
+.spinner-overlay {
+  display: flex;
+  justify-content: center;
+  padding: 3rem;
+}
+
+/* ── Leaderboard rank badges ── */
+.rank-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  font-weight: 700;
+  font-size: .85rem;
+}
+.rank-1     { background-color: #ffd700; color: #333; }
+.rank-2     { background-color: #c0c0c0; color: #333; }
+.rank-3     { background-color: #cd7f32; color: #fff; }
+.rank-other { background-color: #dee2e6; color: #333; }
