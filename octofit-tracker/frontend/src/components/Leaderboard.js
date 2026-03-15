@@ -1,9 +1,5 @@
 import React, { useState, useEffect } from 'react';
 
-const API_BASE = process.env.REACT_APP_CODESPACE_NAME
-  ? `https://${process.env.REACT_APP_CODESPACE_NAME}-8000.app.github.dev`
-  : 'http://localhost:8000';
-
 function rankClass(rank) {
   if (rank === 1) return 'rank-badge rank-1';
   if (rank === 2) return 'rank-badge rank-2';
@@ -17,7 +13,9 @@ function Leaderboard() {
   const [error, setError]     = useState(null);
 
   useEffect(() => {
-    const endpoint = `${API_BASE}/api/leaderboard/`;
+    const endpoint = process.env.REACT_APP_CODESPACE_NAME
+      ? `https://${process.env.REACT_APP_CODESPACE_NAME}-8000.app.github.dev/api/leaderboard/`
+      : 'http://localhost:8000/api/leaderboard/';
     console.log('Leaderboard: fetching from', endpoint);
 
     fetch(endpoint)
